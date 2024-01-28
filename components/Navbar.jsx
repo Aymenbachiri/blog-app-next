@@ -27,10 +27,13 @@ export default function Navbar() {
           <Image src={logo} alt="logo" width={50} height={30} />
         </Link>
       </div>
-      <div className="flex items-center gap-2 bg-gray-200 rounded-lg p-2">
+      <Link
+        href="/"
+        className="flex items-center gap-2 bg-gray-200 rounded-lg p-2"
+      >
         <AiOutlineHome size={30} />
-        <Link href="/">Home</Link>
-      </div>
+        <h1 href="/">Home</h1>
+      </Link>
       <div className="flex items-center gap-8">
         {session?.user ? (
           <>
