@@ -11,12 +11,11 @@ export default function BlogPost({ params }) {
   const [post, setPost] = useState(null);
   const { data: session } = useSession();
   const router = useRouter();
+  const url = process.env.NEXTAUTH_URL;
 
   const getPost = async () => {
     try {
-      const res = await fetch(
-        `http://localhost:3000/api/posts/new/${params.id}`
-      );
+      const res = await fetch(`${url}/api/posts/new/${params.id}`);
       const data = await res.json();
       setPost(data);
       console.log(post);
@@ -33,7 +32,7 @@ export default function BlogPost({ params }) {
     const hasConfirmed = confirm("Are you sure you want to delete this post?");
     if (hasConfirmed) {
       try {
-        await fetch(`http://localhost:3000/api/posts/new/${params.id}`, {
+        await fetch(`/api/posts/new/${params.id}`, {
           method: "DELETE",
         });
         router.push("/");

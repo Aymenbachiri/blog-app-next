@@ -32,9 +32,7 @@ export default function EditPost({ params }) {
   };
   useEffect(() => {
     const getPostDetails = async () => {
-      const res = await fetch(
-        `http://localhost:3000/api/posts/new/${params.id}`
-      );
+      const res = await fetch(`/api/posts/new/${params.id}`);
       const data = await res.json();
       setPost({
         title: data.title,

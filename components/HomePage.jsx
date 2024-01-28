@@ -3,9 +3,11 @@ import { useEffect, useState } from "react";
 import PostCard from "./PostCard";
 
 export default function HomePage() {
+  const url = process.env.NEXTAUTH_URL;
+
   const getPosts = async () => {
     try {
-      const res = await fetch("http://localhost:3000/api/posts");
+      const res = await fetch(`${url}/api/posts`);
       const data = await res.json();
       setAllPosts(data);
     } catch (error) {
