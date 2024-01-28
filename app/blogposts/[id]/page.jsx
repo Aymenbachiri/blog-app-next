@@ -15,7 +15,7 @@ export default function BlogPost({ params }) {
 
   const getPost = async () => {
     try {
-      const res = await fetch(`${url}/api/posts/new/${params.id}`);
+      const res = await fetch(`/api/posts/new/${params.id}`);
       const data = await res.json();
       setPost(data);
       console.log(post);
