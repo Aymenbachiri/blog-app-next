@@ -7,7 +7,7 @@ export default function HomePage() {
 
   const getPosts = async () => {
     try {
-      const res = await fetch(`${url}/api/posts`);
+      const res = await fetch(`/api/posts`);
       const data = await res.json();
       setAllPosts(data);
     } catch (error) {
